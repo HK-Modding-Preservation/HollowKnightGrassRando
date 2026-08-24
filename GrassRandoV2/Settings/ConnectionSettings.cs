@@ -19,7 +19,9 @@ namespace GrassRando.Settings
         private bool GetGrassAreaFlagBit(GrassArea bit) => (allowedAreas & bit) != 0;
         private void SetGrassAreaFlagBit(GrassArea bit, bool value) => allowedAreas = value ? allowedAreas | bit : allowedAreas & ~bit;
 
-        [MenuIgnore] public GrassArea allowedAreas;
+        [MenuIgnore]
+        [CSRIgnore]
+         public GrassArea allowedAreas;
 
         [MenuInclude]
         [MenuLabel("King's Pass")]
@@ -65,7 +67,9 @@ namespace GrassRando.Settings
         private bool GetAreaTypeFlagBit(AreaType bit) => (allowedAreaTypes & bit) != 0;
         private void SetAreaTypeFlagBit(AreaType bit, bool value) => allowedAreaTypes = value ? allowedAreaTypes | bit : allowedAreaTypes & ~bit;
 
-        [MenuIgnore] public AreaType allowedAreaTypes;
+        [MenuIgnore]
+        [CSRIgnore]
+        public AreaType allowedAreaTypes;
 
         [MenuInclude]
         [MenuLabel("Include Dream Grass")]
@@ -77,5 +81,9 @@ namespace GrassRando.Settings
         {
             return $"Enabled/{Enabled} DisplayItems/{DisplayItems} GrassShop/{GrassShop} Areas/{allowedAreas} Types/{allowedAreaTypes}";
         }
+    }
+
+    internal class CSRIgnoreAttribute : Attribute
+    {
     }
 }

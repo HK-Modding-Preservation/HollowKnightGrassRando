@@ -5,19 +5,23 @@
     },
     {
         "name": "Basin_Broken_Vessel_Grub-Group_0",
-        "logic": "Abyss_19[bot1] + (LEFTCLAW | RIGHTCLAW | WINGS)"
+        "logic": "Abyss_19[right1]"
     },
     {
         "name": "Basin_Broken_Vessel_Grub-Group_1",
-        "logic": "Abyss_19[bot1]"
+        "logic": "Abyss_19[bot1] + (ANYCLAW | WINGS) | Abyss_19[left1] | Abyss_19[right1] + Plank-Broken_Vessel_Shortcut?FALSE"
     },
     {
         "name": "Basin_Broken_Vessel_Grub-Group_2",
         "logic": "Abyss_19[right1] + WINGS"
     },
     {
+        "name": "Basin_Broken_Vessel_Grub-Group_3",
+        "logic": "Abyss_19[bot1]"
+    },
+    {
         "name": "Basin_Broken_Vessel_Grub-Group_4",
-        "logic": "Abyss_19[bot1] + (LEFTCLAW | RIGHTCLAW | WINGS) | Abyss_19[bot2] | Abyss_19[right1]"
+        "logic": "Abyss_19[bot2] | Abyss_19[right1]"
     },
     {
         "name": "Basin_Corridor_to_Broken_Vessel-Group_0",
@@ -41,7 +45,11 @@
     },
     {
         "name": "Basin_Monarch_Wings-Group_1",
-        "logic": "Abyss_21[right1] + ( RIGHTCLAW | (WINGS + LEFTCLAW))"
+        "logic": "Abyss_21[right1] + (RIGHTCLAW | (WINGS + LEFTCLAW))"
+    },
+    {
+        "name": "Basin_Monarch_Wings-Group_2",
+        "logic": "Abyss_21[right1] + (RIGHTCLAW | (WINGS + LEFTCLAW) | UPSLASH)"
     },
     {
         "name": "Basin_Palace_Grounds-Group_0",
@@ -53,11 +61,19 @@
     },
     {
         "name": "Basin_Simple_Key-Group_1",
-        "logic": "Abyss_20[top2] | Abyss_20[top1] + RIGHTCLAW"
+        "logic": "Abyss_20[top2] | Abyss_20[top1] + (WINGS | RIGHTCLAW | DAMAGEBOOSTS + $TAKEDAMAGE[1])"
     },
     {
         "name": "Basin_Simple_Key-Group_2",
         "logic": "Abyss_20[top1] | Abyss_20[top2]"
+    },
+    {
+        "name": "Basin_Simple_Key-Group_3",
+        "logic": "Abyss_20[top2] | Abyss_20[top1] + (WINGS | RIGHTCLAW | DAMAGEBOOSTS + $TAKEDAMAGE[1])"
+    },
+    {
+        "name": "Basin_Simple_Key-Group_4",
+        "logic": "Abyss_20[top2] | Abyss_20[top1] + (WINGS | RIGHTCLAW | DAMAGEBOOSTS + $TAKEDAMAGE[1] | RIGHTSLASH)"
     },
     {
         "name": "Crossroads_Above_Lever-Group_0",
@@ -253,23 +269,39 @@
     },
     {
         "name": "Edge_Bardoon-Group_0",
-        "logic": "Deepnest_East_04[right2] + (RIGHTCLAW | WINGS | LEFTCLAW + RIGHTDASH)"
+        "logic": "Deepnest_East_04"
     },
     {
         "name": "Edge_Bardoon-Group_1",
-        "logic": "(Deepnest_East_04[right1] + (LEFTDASH | WINGS | FIREBALLSKIPS)| Deepnest_East_04) + ANYCLAW + (WINGS | ENEMYPOGOS)"
+        "logic": "Deepnest_East_04[right2] | (Deepnest_East_04 + (LEFTCLAW | WINGS | ENEMYPOGOS) | Deepnest_East_04[left2]) + (WINGS | ANYCLAW + ENEMYPOGOS)"
     },
     {
         "name": "Edge_Bardoon-Group_2",
-        "logic": "(Deepnest_East_04[right1] + (LEFTDASH | WINGS | FIREBALLSKIPS)| Deepnest_East_04) + (ANYCLAW | WINGS | ENEMYPOGOS)"
+        "logic": "Deepnest_East_04 + (LEFTCLAW | WINGS | ENEMYPOGOS) | Deepnest_East_04[left1] | Deepnest_East_04[right2]"
     },
     {
         "name": "Edge_Bardoon-Group_3",
-        "logic": "Deepnest_East_04[right1] + (LEFTDASH | WINGS | FIREBALLSKIPS)| Deepnest_East_04"
+        "logic": "Deepnest_East_04[right2] + (WINGS | RIGHTCLAW | ENEMYPOGOS)"
     },
     {
         "name": "Edge_Bardoon-Group_4",
         "logic": "Deepnest_East_04[right1] | Deepnest_East_04"
+    },
+    {
+        "name": "Edge_Bardoon-Group_5",
+        "logic": "Deepnest_East_04 + Wall-Bardoon's_Butt?TRUE"
+    },
+    {
+        "name": "Edge_Bardoon-Group_6",
+        "logic": "Deepnest_East_04 + Wall-Bardoon's_Butt?TRUE + (ANYCLAW | WINGS | LEFTSLASH)"
+    },
+    {
+        "name": "Edge_Bardoon-Group_7",
+        "logic": "Deepnest_East_04 + WINGS"
+    },
+    {
+        "name": "Edge_Bardoon-Group_8",
+        "logic": "Deepnest_East_04[right2] + (WINGS | ANYCLAW | ENEMYPOGOS)"
     },
     {
         "name": "Edge_Below_Camp_Bench-Group_0",
