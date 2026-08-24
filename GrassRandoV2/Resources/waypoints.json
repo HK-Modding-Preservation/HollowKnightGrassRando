@@ -297,7 +297,7 @@
     },
     {
         "name": "Edge_Bardoon-Group_7",
-        "logic": "Deepnest_East_04 + WINGS"
+        "logic": "Deepnest_East_04 + (WINGS | LEFTCLAW + ENEMYPOGOS)"
     },
     {
         "name": "Edge_Bardoon-Group_8",
