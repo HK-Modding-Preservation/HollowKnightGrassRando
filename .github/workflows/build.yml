@@ -19,20 +19,23 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v7
 
       - name: Setup MAPI
-        uses: BadMagic100/setup-hk@v2.0.0
+        uses: BadMagic100/setup-hk@v3.0.2
         with:
           apiPath: API
           dependencyFilePath: GrassRandoV2/ModDependencies.txt
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: latest
+          dotnet-channel: LTS
       
       - name: Install dependencies
         run: dotnet restore
@@ -41,19 +44,19 @@ jobs:
         run: dotnet build -c Release
 
       - name: Prepare artifacts for release
-        uses: actions/upload-artifact@v4.5.0
+        uses: actions/upload-artifact@v7
         with:
           name: Publish
           path: GrassRandoV2/bin/Publish/GrassRandoV2
   release:
     needs:
       - build
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     # only make a release if we manually request the build - other builds will be handled automatically with a push
     if: github.event_name == 'workflow_dispatch' && github.event.inputs.should_release == 'true'
     steps:
       - name: Download Artifacts
-        uses: actions/download-artifact@v4.1.8
+        uses: actions/download-artifact@v8
         with:
           path: artifacts
       - name: Get build details
