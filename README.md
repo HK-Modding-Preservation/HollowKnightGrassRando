@@ -13,7 +13,6 @@ Forked from [StormZillaa/HollowKnightGrassRando](https://github.com/StormZillaa/
 * RandoMapMod
 
 ### Known issues
-- No current way to track the count of grass obtained.
 - When reentering the Dream Nail sequence, there is no way to exit without using Benchwarp.
 - There are _far_ too many pins for RMM to be easily readable.
     - Pins defined manually all stack up on top of one another
